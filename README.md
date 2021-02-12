@@ -10,20 +10,20 @@
 For using Infobip API PHP client in your project, you have to add the following to your `composer.json` file:
 
 	"require": {
-		"infobip/infobip-api-php-client": "dev-master"
+		"caherrera/infobip-api-php-client": "dev-master"
 	}
 
 and run `composer install` command inside the project's root folder.
 
-If your setup prevents you from using `composer` you can manually download this package and all of its dependencies and reference them from your code. However, there are solutions that can automate this process. One of them is `php-download` online tool. You can use it to find pre-composed [infobip client package](https://php-download.com/package/infobip/infobip-api-php-client), download it from there and use in your project without manually collecting the dependencies.
+If your setup prevents you from using `composer` you can manually download this package and all of its dependencies and reference them from your code. However, there are solutions that can automate this process. One of them is `php-download` online tool. You can use it to find pre-composed [infobip client package](https://php-download.com/package/caherrera/infobip-api-php-client), download it from there and use in your project without manually collecting the dependencies.
 
 ## Running examples
 
-Before you start any of the examples, you have to populate specific data (sender address, receiver address, etc.) to `infobip/examples/examples.php` file.
+Before you start any of the examples, you have to populate specific data (sender address, receiver address, etc.) to `caherrera/examples/examples.php` file.
 
 Then, you should uncomment the example you want to test and run the PHP script with your **username** and **password** (in plain text) as arguments like the following:
 
-	php infobip/examples/examples.php YOUR_USERNAME YOUR_PASSWORD
+	php caherrera/examples/examples.php YOUR_USERNAME YOUR_PASSWORD
 
 ### Basic messaging example
 
