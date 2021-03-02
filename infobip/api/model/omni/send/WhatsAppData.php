@@ -162,7 +162,7 @@ class WhatsAppData implements JsonSerializable
     /**
      * @param  MediaTemplateData  $mediaTemplateData
      */
-    public function setMediaTemplateData($mediaTemplateData)
+    public function setMediaTemplateData(MediaTemplateData $mediaTemplateData)
     {
         $this->mediaTemplateData = $mediaTemplateData;
     }
@@ -369,11 +369,20 @@ class WhatsAppData implements JsonSerializable
         return $this->templateName;
     }
 
+    /**
+     * @param $templateName
+     *
+     * @deprecated
+     */
     public function setTemplateName($templateName)
     {
         $this->templateName = $templateName;
     }
 
+    /**
+     * @return string
+     * @deprecated
+     */
     public function getTemplateNamespace()
     {
         return $this->templateNamespace;
