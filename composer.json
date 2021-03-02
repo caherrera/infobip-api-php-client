@@ -1,7 +1,6 @@
 {
   "name": "caherrera/infobip-api-php-client",
   "description": "Infobip SMS library for PHP",
-  "version": "2.5.1",
   "keywords": [
     "infobip",
     "sms",
