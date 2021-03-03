@@ -103,7 +103,7 @@ class AbstractApiClient
         }
 
         if ($body) {
-            $opts[CURLOPT_POSTFIELDS] = json_encode($body);
+            $opts[CURLOPT_POSTFIELDS] = json_encode($body,JSON_UNESCAPED_SLASHES);
         }
 
         $curlSession = curl_init();
