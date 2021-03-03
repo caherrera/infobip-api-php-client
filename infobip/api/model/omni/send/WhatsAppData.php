@@ -19,30 +19,25 @@ class WhatsAppData implements JsonSerializable
      * Media template definitions
      */
     private $mediaTemplateData;
-
     /**
      * @var string
      */
     private $templateName;
-
     /**
      * @var string
      * @deprecated
      * Template namespace
      */
     private $templateNamespace;
-
     /**
      * @var array
      */
     private $templateData;
-
     /**
      * @var string
      * The code of the language or locale to use. Needs to be exactly the code with which the template was registered.
      */
     private $language;
-
     /**
      * $text
      *
@@ -50,12 +45,10 @@ class WhatsAppData implements JsonSerializable
      * Text of the message that will be sent.
      */
     private $text;
-
     /**
      * @var int
      */
     private $validityPeriod;
-
     /**
      * @var string
      * Default: "MINUTES"
@@ -63,7 +56,6 @@ class WhatsAppData implements JsonSerializable
      * The message validity period time unit, allowing finer time granulation.
      */
     private $validityPeriodTimeUnit;
-
     /**
      * $fileUrl
      *
@@ -71,7 +63,6 @@ class WhatsAppData implements JsonSerializable
      * URL of the file sent in the WhatsApp message. Max 2048 characters. Supported file types are PDF, DOC(X), PPT(X), XLS(X). Maximum file size is 100MB.
      */
     private $fileUrl;
-
     /**
      * $imageUrl
      *
@@ -79,7 +70,6 @@ class WhatsAppData implements JsonSerializable
      * URL of the image sent in the WhatsApp message. Max 2048 characters. Supported image types: JPG, JPEG, PNG. Maximum image size is 5MB.
      */
     private $imageUrl;
-
     /**
      * $audioUrl
      *
@@ -87,7 +77,6 @@ class WhatsAppData implements JsonSerializable
      * URL of the audio file sent in the WhatsApp message. Max 2048 characters. Supported audio types are AAC, AMR, MP3, OPUS. Maximum audio size is 16MB.
      */
     private $audioUrl;
-
     /**
      * $videoUrl
      *
@@ -95,7 +84,6 @@ class WhatsAppData implements JsonSerializable
      * URL of the video sent in the WhatsApp message. Max 2048 characters. Supported video types are MP4, 3GPP. Maximum video size is 16MB.
      */
     private $videoUrl;
-
     /**
      * $locationName
      *
@@ -103,7 +91,6 @@ class WhatsAppData implements JsonSerializable
      * Name of the location. Optional value.
      */
     private $locationName;
-
     /**
      * $address
      *
@@ -111,7 +98,6 @@ class WhatsAppData implements JsonSerializable
      * Address location. Optional value.
      */
     private $address;
-
     /**
      * $longitude
      *
@@ -119,7 +105,6 @@ class WhatsAppData implements JsonSerializable
      * Longitude of a coordinate. The value must be between -180 and 180
      */
     private $longitude;
-
     /**
      * $latitude
      *
@@ -127,7 +112,6 @@ class WhatsAppData implements JsonSerializable
      * Latitude of a coordinate. The value must be between -90 and 90.
      */
     private $latitude;
-
     /**
      * $previewUrl
      *
@@ -135,14 +119,22 @@ class WhatsAppData implements JsonSerializable
      * Specifying previewUrl in the request is optional when not including a URL in your message. To include a URL preview, set previewUrl to true in the message body and make sure that URL begins with http:// or https:/
      */
     private $previewUrl;
-
-
     private $contacts;
 
+    public function __construct($content = [])
+    {
+        foreach ((array)$content as $key => $value) {
+            if (property_exists($this, $key)) {
+                $this->{$key} = $value;
+            } else {
+                throw new \Exception("Property $key does not exists");
+            }
+        }
+    }
 
     public function getContacts()
     {
-        throw new Exception("property not implemented");
+        throw new Exception("Property not implemented");
     }
 
 
